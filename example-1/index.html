@@ -2,23 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>example-1</title>
 </head>
 <body>
-<div id="app" @click="clickIt">
-    {{ message }}
+<div id="app">
+    <p>{{ number }}</p>
+    <button v-on:click="number++">点击让数字增加</button>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
   var app = new Vue({
     el: '#app',
     data: {
-      message: 'Hello Vue!'
-    },
-    methods: {
-      clickIt() {
-        this.message = 'Changed';
-      }
+      number: 0
     }
   })
 </script>
