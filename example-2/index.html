@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>example-1</title>
+    <title>example-2</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <style>
@@ -12,20 +12,10 @@
         font-size: 30px;
         text-align: center;
     }
-
-    button {
-        padding: 12px 20px;
-        background: #409eff;
-        color: #fff;
-        border: 1px solid #dcdfe6;
-        font-size: 20px;
-        border-radius: 8px;
-    }
 </style>
 <body>
 <div id="app">
     <p>{{ number }}</p>
-    <button v-on:click="number++">点击让数字增加</button>
 </div>
 
 <script>
@@ -33,8 +23,13 @@
     el: '#app',
     data: {
       number: 0
+    },
+    created() {
+      alert('created: number is: ' + this.number++) // `this` 指向 vm 实例
+    },
+    mounted() {
+      alert('mounted: number is: ' + this.number++)
     }
-    // 其他选择
   })
 </script>
 </body>
